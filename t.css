@@ -6,21 +6,32 @@
     padding: 0;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
+    overflow: hidden; /* evita scroll no deseado */
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-30px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    max-width: 600px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 h1 {
@@ -31,41 +42,35 @@ h1 {
     padding: 0 20px;
 }
 
-div {
+.botones {
     display: flex;
     gap: 25px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-button {
+.boton {
     background: linear-gradient(145deg, #ffffff, #f0f0f0);
     border: none;
     border-radius: 30px;
     padding: 15px 35px;
     font-size: 1.3em;
     font-weight: bold;
-    cursor: pointer;
+    text-decoration: none;
+    color: #000;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
-button:hover {
+.boton:hover {
     transform: translateY(-5px) scale(1.05);
     background: #ffeb3b;
     color: #000;
 }
 
-button:active {
+.boton:active {
     transform: scale(0.95);
-}
-
-button a {
-    text-decoration: none;
-    color: inherit;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
 }
 
 /* Responsive */
@@ -74,19 +79,12 @@ button a {
         font-size: 1.8em;
     }
 
-    button {
+    .boton {
         padding: 12px 25px;
         font-size: 1em;
     }
 
-    div {
+    .botones {
         gap: 15px;
     }
-}
-.container {
-    max-width: 600px;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
