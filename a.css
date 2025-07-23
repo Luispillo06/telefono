@@ -6,37 +6,22 @@
     padding: 0;
 }
 
-html, body {
-    height: 100%;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     text-align: center;
     animation: fadeIn 1.5s ease-in-out;
-    overflow: hidden; /* evita scroll no deseado */
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-30px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
-.container {
-    z-index: 1;    
-    position: relative;
-    z-index: 10;
-    max-width: 600px;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
 
 h1 {
     font-size: 2.8em;
@@ -46,35 +31,41 @@ h1 {
     padding: 0 20px;
 }
 
-.botones {
+div {
     display: flex;
     gap: 25px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.boton {
+button {
     background: linear-gradient(145deg, #ffffff, #f0f0f0);
     border: none;
     border-radius: 30px;
     padding: 15px 35px;
     font-size: 1.3em;
     font-weight: bold;
-    text-decoration: none;
-    color: #000;
+    cursor: pointer;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    display: inline-block;
 }
 
-.boton:hover {
+button:hover {
     transform: translateY(-5px) scale(1.05);
     background: #ffeb3b;
     color: #000;
 }
 
-.boton:active {
+button:active {
     transform: scale(0.95);
+}
+
+button a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
 }
 
 /* Responsive */
@@ -83,44 +74,19 @@ h1 {
         font-size: 1.8em;
     }
 
-    .boton {
+    button {
         padding: 12px 25px;
         font-size: 1em;
     }
 
-    .botones {
+    div {
         gap: 15px;
     }
 }
-
-/* 👇 Añadido: signos de interrogación parpadeando en el fondo */
-.fondo-preguntas {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 5px;
-    font-size: 1em;
-    color: rgba(255, 255, 255, 0.6);
-    pointer-events: none;
-    z-index: 1;
-    animation: parpadeo-brusco 1s steps(1, start) infinite;
-    user-select: none;
-    overflow: hidden;
-    z-index: 1;
-    
-}
-
-@keyframes parpadeo-brusco {
-  0%, 50%, 100% {
-    opacity: 1;
-  }
-  25%, 75% {
-    opacity: 0.2;
-  }
-}
-
+.container {
+    max-width: 600px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+} porfa el diseño esta mal
